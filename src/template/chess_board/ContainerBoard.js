@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import SceneBoard from './SceneBoard.js'
+import SceneBoard from './SceneBoard.js';
+import './BoardStyles.scss';
 
 class Board extends Component {
-    constructor(props){
-        super(props);
-        this.state= {};
-    }
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-    
-    render (){
-        const fill = 'black' ? 'black' : 'white';
-        const stroke = 'black' ? 'white' : 'black';
+  render() {
+    let squares = [];
+    let rows = [];
 
-        return (
-            <div style = {{
-                backgroundColor: fill,
-                color: stroke,
-                width: '100%',
-                height: '100%',
-            }}>
-                <SceneBoard/>
-            </div>
-        )
+    for (var j = 0; j < 8; j++) {
+      squares.push(<div className='square' />);
     }
+    for (var i = 0; i < 8; i++) {
+      rows.push(<div className='row'>{squares}</div>);
+    }
+    return (
+      <div className='main-board'>
+        {rows}
+        <div />
+      </div>
+    );
+  }
 }
 
-export default Board
+export default Board;

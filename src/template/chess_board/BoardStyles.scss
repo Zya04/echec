@@ -1,0 +1,24 @@
+.main-board {
+  border: 1px solid red;
+}
+
+.row .square {
+  width: 100px;
+  height: 100px;
+  background-color: burlywood;
+}
+
+.row:nth-of-type(odd) .square:nth-of-type(odd) {
+  background-color: black;
+}
+
+.row:nth-of-type(even) .square:nth-of-type(even) {
+  background-color: black;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
